@@ -1,6 +1,33 @@
 const colorCombinator = require('./color-combinator.js')
 const colorDeconstructor = require('./color-deconstructor.js')
 
+function getInput(i) {
+  return process.argv[i + 2];
+}
+//COMBINATOR FUNCTION ==================
+
+//  get user input
+const str1 = getInput(0);
+const str2 = getInput(1);
+
+// get result from back end
+const printCombination = colorCombinator(str1, str2)
+
+// print to user
+console.log(printCombination)
+
+//DECONSTRUCTOR FUNCTION ==================
+
+//get user input
+const str = getInput(0);
+
+//get result from back end
+const printDeconstruction = colorDeconstructor(str);
+
+//print result to user
+console.log(printDeconstruction);
+
+// TEST =====================
 describe('colorCombinator', () => {
   it(`returns the combination of the two given colors`, () => {
     expect(colorCombinator('red', 'yellow')).toBe('When you combine red and yellow, you get orange!')
